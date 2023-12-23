@@ -18,13 +18,18 @@ const morgan  =  require('morgan') ;
 const connectDatabase =  require("./Database/database");
 
 // connecting to database
-connectDatabase(); 
 
 
 app.use(morgan('tiny')) ;   
 
 
-app.listen(process.env.PORT || 3000 , ()=> {console.log(`server is working on  http://localhost:${process.env.PORT}`)})  
+connectDatabase().then(()=>{
+app.listen(process.env.PORT || 3000 , ()=> {console.log(`server is working on  http://localhost:${process.env.PORT}`)});} )
+.catch((err)=>{ 
+    console.log(err); 
+})
+
+
 
 
 // unhandled promise rejection
