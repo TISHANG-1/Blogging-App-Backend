@@ -22,3 +22,5 @@ npm install
 
 npm start
 ```
+
+# we have focused on developing crud for blogs, and jwt based login, register and logout for user authentication
