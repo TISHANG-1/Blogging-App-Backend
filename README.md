@@ -21,3 +21,4 @@ cd Blogging-App-Backend
 npm install
 
 npm start
+```
